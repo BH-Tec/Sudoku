@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
+import static br.com.brunodorea.service.BoardService.BOARD_LIMITE;
 import static br.com.brunodorea.util.BoardTemplate.BOARD_TEMPLATE;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
@@ -17,7 +18,6 @@ import static java.util.stream.Collectors.toMap;
 public class Main {
     public final static Scanner scanner = new Scanner(System.in);
     private static Board board;
-    private final static int BOARD_LIMITE = 9;
 
     public static void main(String[] args) {
         final var positions = Stream.of(args)
@@ -58,18 +58,7 @@ public class Main {
         if(nonNull(board)){
             System.out.println("O jogo já foi iniciado!");
         }
-        List<List<Space>> spaces = new ArrayList<>();
-        for(int i = 0; i < BOARD_LIMITE; i++) {
-            spaces.add(new ArrayList<>());
-            for (int j = 0; j < BOARD_LIMITE; j++) {
-                var position = positions.get("%s, %s".formatted(i, j));
-                var expected = Integer.parseInt(position.split(",")[0]);
-                var fixed = Boolean.parseBoolean(position.split(",")[1]);
-                var currentSpace = new Space(expected, fixed);
-                spaces.get(i).add(currentSpace);
-            }
-        }
-        board = new Board(spaces);
+
         System.out.println("O jogo está pronto para iniciar.");
     }
 
