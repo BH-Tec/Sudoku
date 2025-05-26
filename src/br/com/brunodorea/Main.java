@@ -27,6 +27,7 @@ public class Main {
                 ));
         var option = -1;
         while (true) {
+            System.out.println("================SUDOKU================");
             System.out.println("Selecione uma das opções a seguir");
             System.out.println("1 - Iniciar um novo Jogo");
             System.out.println("2 - Colocar um novo número");
@@ -36,6 +37,8 @@ public class Main {
             System.out.println("6 - Limpar jogo");
             System.out.println("7 - Finalizar jogo");
             System.out.println("8 - Sair");
+            System.out.println("========================================");
+            System.out.println("Digite sua opção: ");
             option = scanner.nextInt();
             switch (option){
                 case 1 -> startGame(positions);
