@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import static br.com.brunodorea.service.BoardService.BOARD_LIMITE;
+import static br.com.brunodorea.service.BoardService.BOARD_LIMIT;
 import static br.com.brunodorea.util.BoardTemplate.BOARD_TEMPLATE;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
@@ -99,7 +99,7 @@ public class Main {
         }
         var args = new Object[81];
         var argPos = 0;
-        for(int i = 0; i < BOARD_LIMITE; i++) {
+        for(int i = 0; i < BOARD_LIMIT; i++) {
             for (var col: board.getSpaces()){
                 args[argPos ++] = " " + ((isNull(col.get(i).getActual())) ? " " : col.get(i).getActual());
             }
